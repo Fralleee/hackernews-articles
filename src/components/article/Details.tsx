@@ -58,11 +58,12 @@ const RenderComments = (article: Article, isRoot?: boolean) => {
 function ArticleDetails() {
   const { id } = useParams();
   const { data, error, isLoading } = hackernewsApi.useGetArticleByIdQuery(id);
+  const timeAgo = useTimeAgo(data?.created_at);
 
   if (isLoading) return <Loader />;
   if (!data) return <Error error={error} />;
 
-  const { author, title, url, created_at } = data;
+  const { author, title, url } = data;
   return (
     <Details>
       <header>
@@ -73,7 +74,7 @@ function ArticleDetails() {
         <Meta>
           <FaUser /> {author}
           <Divider />
-          <FaClock /> {useTimeAgo(created_at)}
+          <FaClock /> {timeAgo}
         </Meta>
       </header>
       <Comments>{RenderComments(data, true)}</Comments>
