@@ -73,7 +73,7 @@ const ArticleListItem = ({ article, setHidden }: PropTypes) => {
     <Row>
       <Score>{article.points}</Score>
       <Content>
-        <Title href={article.url} title={article.title}>
+        <Title href={article.url} title={article.title} rel="noreferrer" target="_blank">
           {article.title}
           {article.url && (
             <>

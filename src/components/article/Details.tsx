@@ -68,7 +68,7 @@ function ArticleDetails() {
     <Details>
       <header>
         <h1>{title}</h1>
-        <a href={url} title={title}>
+        <a href={url} title={title} rel="noreferrer" target="_blank">
           {url}
         </a>
         <Meta>
