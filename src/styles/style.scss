@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;700&family=Roboto:wght@400;500&display=swap');
+@import 'styles/variables.scss';
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Roboto, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--bg);
+  color: var(--text);
+
+  a {
+    color: var(--text-light);
+    text-decoration: none;
+    &:hover {
+      color: var(--text);
+    }
+    svg {
+      position: relative;
+      top: 2px;
+    }
+  }
+
+  p {
+    margin: 0;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--text);
+    font-family: Montserrat, serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  input {
+    padding: 1em;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    outline: none;
+  }
+
+  button {
+    display: block;
+    padding: 0.75em;
+    font-weight: bold;
+    font-size: 1.125rem;
+    outline: none;
+
+    border-radius: 4px;
+    background-color: var(--hackernews);
+    color: white;
+    border: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.125);
+    &:disabled {
+      background-color: var(--text-light);
+    }
+    &:active {
+      background-color: var(--hackernews-active);
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
